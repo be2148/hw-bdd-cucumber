@@ -4,7 +4,7 @@
 test whether one movie appears before another in the output listing. Create a step definition that matches a step such 
 as `Then I should see "Aladdin" before "Amelie"`
 
->[!HINT]
+> [!HINT]
 > * `page` is the Capybara method that returns an object representing the page returned by the app server. You can 
 >   use it in expectations such as `expect(page).to have_content('Hello World')`.  More importantly, you can search 
 >   the page for specific elements matching CSS selectors or XPath expressions; see the 

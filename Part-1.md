@@ -89,9 +89,9 @@ Feature: display list of movies sorted by different criteria
 </code></pre>
 </details>
 
-> [!IMPORTANT] For this entire assignment, you need to modify** `movie_steps.rb` **under 
-> `features/step_definition` as well as** `sort_movie_list.feature` **and** `filter_movie_list.feature` 
-> **under `features/`**
+> [!IMPORTANT] For this entire assignment, you need to modify `movie_steps.rb` under 
+> `features/step_definition` as well as `sort_movie_list.feature` and `filter_movie_list.feature`
+> under `features/`
 
 For Part 1, you will create a step definition that will match the step `Given the following movies exist` in the 
 `Background` section of both `sort_movie_list.feature` and `filter_movie_list.feature`. (Later in the course, we will 
