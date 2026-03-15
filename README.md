@@ -20,7 +20,24 @@ As in previous CHIPS, you will need to authenticate `git` with GitHub to copy ou
 to your personal GitHub account. Once copied, clone your repo to your local machine in order to complete this 
 assignment.
 
-[!NOTE] Your directory must be named `rottenpotatoes`.**
+> [!NOTE]
+> Your directory must be named `rottenpotatoes`.
 
-## Submitting
-TBD
+## Setup Your Working Environment
+
+Now that you've got the code, you should confirm that you can get RottenPotatoes up and running as we have 
+delivered it. These are the same set of steps we take on most new Rails applications.
+
+**NOTE THIS WILL BE EDITED AFTER THE REPO / RAILS APP IS UPSCALED AND CLEANED UP**
+```sh
+cd rottenpotatoes
+bundle config set without 'production'
+bundle install
+bundle exec rails db:setup # shorthand for db:create, db:migrate, db:seed
+bundle exec rails server -b 0.0.0.0
+```
+
+## Parts
+- [Part 1 - BDD Introduction](Part-1.md)
+- [Part 2 - Filtering Movies](Part-2.md)
+- [Part 3 - Sorting Movies](Part-3.md)
