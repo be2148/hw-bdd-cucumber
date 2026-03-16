@@ -89,8 +89,9 @@ Feature: display list of movies sorted by different criteria
 </code></pre>
 </details>
 
-> [!IMPORTANT] For this entire assignment, you need to modify `movie_steps.rb` under 
-> `features/step_definition` as well as `sort_movie_list.feature` and `filter_movie_list.feature`
+> [!IMPORTANT] 
+> For this entire assignment, you need to modify `movie_steps.rb` under 
+> `features/step_definitions` as well as `sort_movie_list.feature` and `filter_movie_list.feature`
 > under `features/`
 
 For Part 1, you will create a step definition that will match the step `Given the following movies exist` in the 
@@ -102,7 +103,8 @@ movies to the database; it's OK to bypass the GUI associated with creating new m
 scenarios are testing. Tip: you can use the `log` method just like `puts` to output to the console while running 
 Cucumber tests.
 
-> [!IMPORTANT] Remove any instances of `pending` in code when you implement each step definition.
+> [!IMPORTANT] 
+> Remove any instances of `pending` in code when you implement each step definition.
 
 SUCCESS is when all **Background** steps for the scenarios in `filter_movie_list.feature` and 
 `sort_movie_list.feature` are passing Green.
