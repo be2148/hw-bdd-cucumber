@@ -16,13 +16,13 @@ You should write this new step definition in `movie_steps.rb`, filling in the em
 test the step, feel free to modify the scenario you just completed; this isn't required, though, since you'll also
 use this new custom step in the other scenario in `filter_movie_list.feature`.
 
->[!HINT]
+> [!TIP]
 > This step definition can reuse existing steps in `web_steps.rb`, as shown in the example in Section 7.8 in ESaaS.
 
 3. Similarly, since it’s tedious to specify a step for each individual movie we should see, add a step definition to 
 match a step such as: "Then I should see the following movies:".
 
->[!HINT]
+>[!TIP]
 > Start from the starter code in `movie_steps.rb`. You can check out a default implementation for “I should see” in 
 > `web_steps.rb`, or just reuse the actual steps from `web_steps.rb` as described above.
 
@@ -30,7 +30,7 @@ match a step such as: "Then I should see the following movies:".
 That would detract from the goal of BDD to convey the behavioral intent of the user story. To fix this, complete the 
 step definition that will match steps of the form: `Then I should see all the movies` in `movie_steps.rb`.
 
->[!HINT]
+>[!TIP]
 > Consider counting the number of rows in the HTML table to implement these steps. If you have computed the `rows` 
 > variable as the number of table rows, you can use the assertion `expect(rows).to eq value` to fail the test in case 
 > the values don't match.
