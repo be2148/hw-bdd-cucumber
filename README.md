@@ -32,8 +32,7 @@ delivered it. These are the same set of steps we take on most new Rails applicat
 cd rottenpotatoes
 docker build -t rottenpotatoes:latest .
 docker run -it -v "$(pwd):/app" -p 3000:3000 rottenpotatoes
-<...and then in the running docker container...>
-bundle install
+# Inside the running container, run:bundle install
 bundle exec rails db:setup # shorthand for db:create, db:migrate, db:seed
 bundle exec rails server -b 0.0.0.0 -p 3000
 ```
