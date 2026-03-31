@@ -24,10 +24,16 @@ Background: movies have been added to database
 
 Scenario: sort movies alphabetically
   When I select "Title" from "sort_by"
-  # your steps here
-  Then complete the rest of of this scenario
+  And I press "Refresh"
+  Then I should see "2001: A Space Odyssey" before "Aladdin" in the movie list
+  And I should see "Aladdin" before "Amelie" in the movie list
+  And I should see "Amelie" before "Chicken Run" in the movie list
+  And I should see "Chicken Run" before "When Harry Met Sally" in the movie list
 
 Scenario: sort movies in increasing order of release date
   When I select "Release date" from "sort_by"
-  # your steps here
-  Then complete the rest of of this scenario
+  And I press "Refresh"
+  Then I should see "2001: A Space Odyssey" before "Raiders of the Lost Ark" in the movie list
+  And I should see "Raiders of the Lost Ark" before "The Terminator" in the movie list
+  And I should see "The Terminator" before "Aladdin" in the movie list
+  And I should see "Aladdin" before "The Help" in the movie list

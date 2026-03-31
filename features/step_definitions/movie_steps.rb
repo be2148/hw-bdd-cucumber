@@ -1,13 +1,15 @@
 # Add a declarative step here for populating the DB with movies.
 
+# seed DB for tests "Arrange" step
 Given(/the following movies exist/) do |movies_table|
   movies_table.hashes.each do |movie|
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
+    Movie.create!(movie)
   end
-  pending "Fill in this step in movie_steps.rb"
 end
 
+# "Assert" step
 Then(/(.*) seed movies should exist/) do |n_seeds|
   expect(Movie.count).to eq n_seeds.to_i
 end
@@ -18,7 +20,9 @@ end
 Then(/^I should see "(.*)" before "(.*)" in the movie list$/) do |e1, e2|
   #  ensure that that e1 occurs before e2.
   #  page.body is the entire content of the page as a string.
-  pending "Fill in this step in movie_steps.rb"
+  expect(page).to have_content(e1)
+  expect(page).to have_content(e2)
+  expect(page.body.index(e1) < page.body.index(e2)).to be true
 end
 
 
@@ -29,17 +33,26 @@ When(/I check the following ratings: (.*)/) do |rating_list|
   # HINT: use String#split to split up the rating_list, then
   #   iterate over the ratings and reuse the "When I check..." or
   #   "When I uncheck..." steps in lines 89-95 of web_steps.rb
-  pending "Fill in this step in movie_steps.rb"
+  rating_list.split(',').map(&:strip).each do |rating|
+    step "I check \"#{rating}\""
+  end
 end
 
 Then(/^I should (not )?see the following movies: (.*)$/) do |no, movie_list|
   # Take a look at web_steps.rb Then /^(?:|I )should see "([^"]*)"$/
-  pending "Fill in this step in movie_steps.rb"
+  movie_list.split(',').map(&:strip).each do |movie|
+    if no
+      step "I should not see \"#{movie}\""
+    else
+      step "I should see \"#{movie}\""
+    end
+  end
 end
 
 Then(/^I should see all the movies$/) do
-  # Make sure that all the movies in the app are visible in the table
-  pending "Fill in this step in movie_steps.rb"
+  Movie.all.each do |movie|
+    expect(page).to have_content(movie.title)
+  end
 end
 
 ### Utility Steps Just for this assignment.
